@@ -45,7 +45,7 @@ dependencies {
 android {
     compileSdkVersion 31
     buildToolsVersion '31.0.0'
-    ndkVersion "21.4.7075529"
+    ndkVersion "21.1.6352462"
 
     defaultConfig.applicationId = "org.telegram.messenger"
 
@@ -197,14 +197,6 @@ android {
                 abiVersionCode = 1
             }
         }
-        x86 {
-            ndk {
-                abiFilters "x86"
-            }
-            ext {
-                abiVersionCode = 2
-            }
-        }
         armv7_SDK23 {
             ndk {
                 abiFilters "armeabi-v7a"
@@ -220,35 +212,12 @@ android {
                 abiVersionCode = 3
             }
         }
-        x86_SDK23 {
-            ndk {
-                abiFilters "x86"
-            }
-            sourceSets.debug {
-                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
-            }
-            sourceSets.release {
-                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
-            }
-            minSdkVersion 23
-            ext {
-                abiVersionCode = 4
-            }
-        }
         arm64 {
             ndk {
                 abiFilters "arm64-v8a"
             }
             ext {
                 abiVersionCode = 5
-            }
-        }
-        x64 {
-            ndk {
-                abiFilters "x86_64"
-            }
-            ext {
-                abiVersionCode = 6
             }
         }
         arm64_SDK23 {
@@ -266,24 +235,9 @@ android {
                 abiVersionCode = 7
             }
         }
-        x64_SDK23 {
-            ndk {
-                abiFilters "x86_64"
-            }
-            sourceSets.debug {
-                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
-            }
-            sourceSets.release {
-                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
-            }
-            minSdkVersion 23
-            ext {
-                abiVersionCode = 8
-            }
-        }
         afat {
             ndk {
-                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+                abiFilters "armeabi-v7a", "arm64-v8a"
             }
             sourceSets.debug {
                 manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
